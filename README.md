@@ -89,7 +89,7 @@ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 If they are missing, the script will try to install them, but sometimes a manual install might be necessary.
 
 ### 5. **System Reboot Required**
-   - After switching to **Performance Mode**, it's often recommended to reboot your system for all changes to take full effect, particularly if fan speeds or GPU switching weren't applied properly. You’ll be prompted to reboot after each mode switch.
+   - After switching to **Performance Mode** or **Power-Saving**, it's recommended to reboot your system for all changes to take full effect, particularly for GPU switching to apply properly. You’ll be prompted to reboot after each mode switch.
 
 ##  Customization & Advanced Use
 
@@ -101,6 +101,13 @@ If they are missing, the script will try to install them, but sometimes a manual
    echo 255 > /sys/class/hwmon/hwmon*/pwm1
    ```
 
-   Be cautious with this to avoid overheating or unnecessary wear on your fans.
+   Be cautious with this to avoid unnecessary wear on your fans.
 
+### **Fan Speed Disclaimer**
+   - The fan speed set in the code will always **max out the fans** unless manually changed. If you do not want the fans to run at full speed, you can either **modify the script** to set a lower speed or leave it in **auto mode** by setting `pwm1_enable` to `2` and `pwm2_enable` to `2` on a **dual fan** machine
+   
+   ```bash
+   echo 2 > /sys/class/hwmon/hwmon*/pwm1_enable
+   echo 2 > /sys/class/hwmon/hwmon*/pwm2_enable
+   ```
 
