@@ -19,14 +19,18 @@ To install the ASUS TUF Mode Switcher, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/asus-tuf-mode-switcher.git
+git clone https://github.com/yourusername/TUF-Mode-Switcher.git
 
 # Change to the directory
-cd asus-tuf-mode-switcher
+cd TUF-Mode-Switcher
 
 # Run the install script
-sudo ./install.sh
+sudo bash install.sh
+
+# Run the uninstall script (only if you're ready to let go... it’s not you, it’s me)
+sudo bash uninstall.sh
 ```
+
 
 This will copy the script to `/usr/local/bin/` and make it executable, so you can use it from anywhere.
 
